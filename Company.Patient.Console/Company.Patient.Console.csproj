@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Company.Patient.RequestHelper\Company.Patient.RequestHelper.csproj" />
+    <ProjectReference Include="..\src\Company.Patients.Application\Company.Patients.Application.csproj" />
+  </ItemGroup>
+
+</Project>

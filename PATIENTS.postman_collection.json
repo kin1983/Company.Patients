@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "d4717a93-7cdb-4616-8e8f-f5055f4c5591",
+		"name": "PATIENTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11058320",
+		"_collection_link": "https://www.postman.com/ivan3003/workspace/workstationapi/collection/11058320-d4717a93-7cdb-4616-8e8f-f5055f4c5591?action=share&source=collection_link&creator=11058320"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddNew",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": {\r\n    \"use\": \"official\",\r\n    \"family\": \"Комаров\",\r\n    \"given\": [\r\n      \"Иван\",\r\n      \"Николаевич\"\r\n    ]\r\n  },\r\n  \"genderType\": \"Male\",\r\n  \"birthDate\": \"2000-10-10\",\r\n  \"active\": \"True\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4043/api/Patients/Post"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": {\r\n    \"id\": \"35c2947b-24d8-48e4-b141-2517c550156c\",\r\n    \"use\": \"official\",\r\n    \"family\": \"Комаров\",\r\n    \"given\": [\r\n      \"Иван\",\r\n      \"Никоалевич\"\r\n    ]\r\n  },\r\n  \"genderType\": \"Male\",\r\n  \"birthDate\": \"1983-03-30\",\r\n  \"active\": \"True\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4043/api/Patients/Put"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:4043/api/Patients/Delete/35c2947b-24d8-48e4-b141-2517c550156c"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByDate(eq)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4043/api/Patients/SearchByDate?date=eq2000-10-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4043",
+					"path": [
+						"api",
+						"Patients",
+						"SearchByDate"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "eq2000-10-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByDate(ne)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4043/api/Patients/SearchByDate?date=ne2000-10-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4043",
+					"path": [
+						"api",
+						"Patients",
+						"SearchByDate"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "ne2000-10-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByDate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

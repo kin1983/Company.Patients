@@ -1,0 +1,29 @@
+version: "3.4"
+networks:
+  company-patients-api-image-network:
+    driver: bridge
+services:
+  company.patients.api: 
+    container_name: company-patients-api-image
+    build:
+      context: .
+      dockerfile: src/Company.Patients.Api/Dockerfile
+    ports:
+      - "4043:4043"
+    networks:
+      - company-patients-api-image-network
+    depends_on:
+      - patients_db
+  patients_db:
+    container_name: company-patients-db-image
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - company-patients-api-image-network
+    volumes:
+      - mongo-data:/var/lib/db/data
+volumes:
+  mongo-data:
+
+
